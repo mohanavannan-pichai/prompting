@@ -1,0 +1,18 @@
+Make a beautiful AI prompting web application using Python and Fast API  that will run under unicorn web server. Give me end to end python code.   The description of the web application as follows.
+
+1. Title it as Art Of Prompting and it has the following elements
+2. Role - a combo box -  load the roles from the given Knowledge_Compentencies.xlsx
+3. Context - a disabled text area - upon selecting the role above the corresponding context text will be loaded from mysql database 
+4. Example - A text area - where the user can enter an example
+5. Audience - A combo box - where the user can select the target audience that will be automatically filled in with selection in role above and will have all the roles defined in the role combo box above
+6. Format - A combo box - that lists the various predefined formats like a research report, project report, blog post, email, or code, etc
+7. Style - A pre populated combo box - this lists various output styles with items like professional, casual, funky, etc
+8. Constraints - a text area - where the user can enter the constraints by self
+9. Separate section in the UI with following elements
+    1. Task - A text area - where the user enters the task
+    2.  Work on it - A button  - upon clicking it, it will generate the prompt with above details and call mistral llm and qwen 4b llm hosted locally with ollama
+10. Separate section in the UI with the following element
+    1. Two disabled text areas - it will display the output from point 8 above.
+    2. A combo box - that will give the options for report generation, like text file, pdf, single file web page, etc
+    3. A button next - with caption generate report
+    4. A final button - that clears all above elements and starts fresh

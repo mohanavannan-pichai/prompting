@@ -154,3 +154,20 @@ You can customize the models and database connection by modifying the global var
 | `OLLAMA_HOST` | Ollama server URL | `http://localhost:11434` |
 | `MISTRAL_MODEL` | Name of the first Ollama model | `mistral:latest` |
 | `QWEN_MODEL` | Name of the second Ollama model | `qwen3:4b` |
+
+Make sure you install MySQL and the required packages and create database, grant permissions and create the table.
+
+CREATE DATABASE promptdb;
+CREATE USER 'promptuser'@'localhost' IDENTIFIED BY 'promptuser123';
+grant all privileges on promptdb.* to 'promptuser'@'localhost';
+flush privileges;
+
+CREATE TABLE role_contexts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  role VARCHAR(255) UNIQUE,
+  context TEXT
+);
+
+Run the mysql loader
+
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
